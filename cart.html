@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<ul class="topnav">
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li class="right"><a href="login.html">Login</a></li>
+    <li class="right"><a href="trackorder.html">Track Order</a></li>
+</ul>
+
+    <style>
+      /* Two-column layout */
+      .container {
+        display: flex;
+        align-items: center;
+      }
+
+      .image-column {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .form-column {
+        flex: 1;
+        padding: 20px;
+      }
+
+      /* Styles for form */
+      form {
+        border: 1px solid #ccc;
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #basket-summary {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basket</h1>
+    <div class="container">
+      <div class="image-column">
+        <img id="product-image" src="" alt="Product Image">
+      </div>
+      <div class="form-column">
+        <form id="basket-form">
+          <label for="delivery-date">Delivery Date:</label>
+          <input type="date" id="delivery-date" name="delivery-date" required>
+
+          <label for="purchase-option">Purchase Option:</label>
+          <select id="purchase-option" name="purchase-option" required>
+            <option value="subscription">Start a Subscription: $52 + free shipping</option>
+            <option value="one-time">One time purchase: $74</option>
+          </select>
+
+          <button type="submit">Add to Basket</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="basket-summary"></div>
+
+    <script>
+      // Function to get query parameter value
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Set product image based on query parameter
+      const productImage = document.getElementById('product-image');
+      const flowerNumber = getQueryParam('flower');
+      if (flowerNumber) {
+        productImage.src = `${flowerNumber}.jpeg`;
+      }
+
+      // Add event listener to form submission
+      const basketForm = document.getElementById('basket-form');
+      basketForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get form data
+        const deliveryDate = document.getElementById('delivery-date').value;
+        const purchaseOption = document.getElementById('purchase-option').value;
+
+        // Add item to basket
+        const basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
+        basketItems.push({ deliveryDate, purchaseOption });
+        localStorage.setItem('basketItems', JSON.stringify(basketItems));
+
+        // Update basket summary
+        const basketSummary = document.getElementById('basket-summary');
+        basketSummary.innerHTML = `<p>${basketItems.length} item(s) in basket</p>`;
+
+        // Reset form
+        basketForm.reset();
+      });
+    </script>
+  </body>
+</html>

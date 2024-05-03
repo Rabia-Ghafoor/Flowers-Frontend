@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
     <link rel="stylesheet" href="navbar.css">
-  </head>
+</head>
+<body>
 
-  <body>
-    <ul class="topnav">
-      <li><a class="active" href="index.html">Home </a></li>
-      <li><a href="add-question.html"></a></li>
-      <li><a href="make-a-quiz.html"> Help</a></li>
-      <li><a href="take-a-quiz.html"> Cart </a></li>
-      
-      <li class="right"> <a href="login.html">Login</a>
-      <li class="right"> <a href="login.html">Track Order</a>
-      
-      
-      </li>
-    </ul>
+<!-- Navigation Bar -->
+<ul class="topnav">
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li class="right"><a href="login.html">Login</a></li>
+    <li class="right"><a href="trackorder.html">Track Order</a></li>
+</ul>
 
+<!-- Header Image -->
+<img src="header.jpeg" alt="Header Image">
 
-   
-  </body>
-
-  <div id="header">
-		<h1>Send Her Blooms</h1>
-		<h2>She will love! Shop All Mother's Day Flowers and Gifts!</h2>
-	</div>
-
-  <h1>Flower Shop</h1>
-  <div id="basket-icon">Basket: <span id="basket-count">0</span></div>
-</header>
-<div id="filters">
-  
-		<select id="flowerType">
-			<option value="">Flower Type</option>
-		</select>
-		<select id="occasion">
-			<option value="">Occasion</option>
-		</select>
-		<select id="color">
-			<option value="">Color</option>
-	
-	</div>
-	<div id="products"></div>
-  </select>
-  <select id="sorting">
-    <option value="low-to-high">Price: Low to High</option>
-    <option value="high-to-low">Price: High to Low</option>
-  </select>
+<!-- Header -->
+<div id="header">
+    <h1>Send Her Blooms</h1>
+    <h2>She will love! Shop All Mother's Day Flowers and Gifts!</h2>
 </div>
 
-  
+<!-- Flower Shop -->
+<h1>Flower Shop</h1>
+<div id="basket-icon">Basket: <span id="basket-count">0</span></div>
 
+<!-- Filters -->
+<div id="filters">
+    <select id="flowerType">
+        <option value="">Flower Type</option>
+    </select>
+    <select id="occasion">
+        <option value="">Occasion</option>
+    </select>
+    <select id="color">
+        <option value="">Color</option>
+    </select>
+    <select id="sorting">
+        <option value="low-to-high">Price: Low to High</option>
+        <option value="high-to-low">Price: High to Low</option>
+    </select>
+</div>
+
+<!-- Flower Images -->
+<div class="flower-container">
+    <div class="flower-item"><a href="cart.html?flower=1"><img src="1.jpeg" alt="Flower 1"></a></div>
+    <div class="flower-item"><a href="cart.html?flower=2"><img src="2.jpeg" alt="Flower 2"></a></div>
+    <div class="flower-item"><a href="cart.html?flower=3"><img src="3.jpeg" alt="Flower 3"></a></div>
+    <div class="flower-item"><a href="cart.html?flower=4"><img src="4.jpeg" alt="Flower 4"></a></div>
+    <div class="flower-item"><a href="cart.html?flower=5"><img src="5.jpeg" alt="Flower 5"></a></div>
+</div>
+
+</body>
 </html>
