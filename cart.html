@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Shop</title>
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <body>
+
+<script src="cart.js"></script>
 
 <!-- Navigation Bar -->
 <ul class="topnav">
     <li><a class="active" href="index.html">Home</a></li>
     <li><a href="help.html">Help</a></li>
-    <li><a href="cart.html">Cart</a></li>
+    <li class="right"><a href="cart.html"><i class="fa fa-shopping-basket" style="font-size:30px;"></i><span id="basket-count"></span></a></li>
     <li class="right"><a href="login.html">Login</a></li>
     <li class="right"><a href="trackorder.html">Track Order</a></li>
 </ul>
@@ -69,7 +73,7 @@
     </style>
   </head>
   <body>
-    <h1>Basket</h1>
+  
     <div class="container">
       <div class="image-column">
         <img id="product-image" src="" alt="Product Image">
@@ -99,6 +103,13 @@
         return urlParams.get(param);
       }
 
+      // Update basket count in navigation
+      function updateBasketCount() {
+        const basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
+        const basketCount = basketItems.length;
+        document.getElementById('basket-count').innerText = basketCount === 0 ? '' : basketCount;
+      }
+
       // Set product image based on query parameter
       const productImage = document.getElementById('product-image');
       const flowerNumber = getQueryParam('flower');
@@ -124,9 +135,15 @@
         const basketSummary = document.getElementById('basket-summary');
         basketSummary.innerHTML = `<p>${basketItems.length} item(s) in basket</p>`;
 
+        // Update basket count in navigation
+        updateBasketCount();
+
         // Reset form
         basketForm.reset();
       });
+
+      // Update basket count on page load
+      updateBasketCount();
     </script>
   </body>
 </html>

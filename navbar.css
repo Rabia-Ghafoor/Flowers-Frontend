@@ -4,7 +4,7 @@ ul.topnav {
     margin-bottom: 5%;
     padding: 0;
     overflow: hidden;
-    background-color: #a147ce;
+    background-color: #f699d1;
   }
   
   ul.topnav li {float: left;}
@@ -22,6 +22,11 @@ ul.topnav {
   ul.topnav li a.active {background-color:#a147ce; }
   
   ul.topnav li.right {float: right;}
+
+  .topnav {
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
   
 
 
@@ -39,3 +44,20 @@ ul.topnav {
     max-width: calc(45% - 20px);
     margin: 10px;
   }
+
+  .flower-container .flower-item img {
+    width: 500px; /* Set the width as per your requirement */
+    height: 500px; /* Set the height as per your requirement */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+#header-img {
+  width: 100%; /* Set the width to 100% */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image behaves as a block-level element */
+  margin-top: 0; /* Remove any top margin */
+}
+
+body {
+  background-color: #f3e7ec; /* Set the background color */
+}

@@ -5,27 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Shop</title>
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+<script src="cart.js"></script>
 <!-- Navigation Bar -->
 <ul class="topnav">
     <li><a class="active" href="index.html">Home</a></li>
     <li><a href="help.html">Help</a></li>
-    <li><a href="cart.html">Cart</a></li>
     <li class="right"><a href="login.html">Login</a></li>
+    <li class="right"><a href="cart.html"><i class="fa fa-shopping-basket" style="font-size:30px;"></i>
     <li class="right"><a href="trackorder.html">Track Order</a></li>
 </ul>
-
 <!-- Header Image -->
-<img src="header.jpeg" alt="Header Image">
-
+<img id="header-img" src="header.jpeg" alt="Header Image">
 <!-- Header -->
 <div id="header">
     <h1>Send Her Blooms</h1>
     <h2>She will love! Shop All Mother's Day Flowers and Gifts!</h2>
 </div>
-
 <!-- Flower Shop -->
 <h1>Flower Shop</h1>
 <div id="basket-icon">Basket: <span id="basket-count">0</span></div>
@@ -47,13 +45,44 @@
     </select>
 </div>
 
+
+
 <!-- Flower Images -->
 <div class="flower-container">
-    <div class="flower-item"><a href="cart.html?flower=1"><img src="1.jpeg" alt="Flower 1"></a></div>
-    <div class="flower-item"><a href="cart.html?flower=2"><img src="2.jpeg" alt="Flower 2"></a></div>
-    <div class="flower-item"><a href="cart.html?flower=3"><img src="3.jpeg" alt="Flower 3"></a></div>
-    <div class="flower-item"><a href="cart.html?flower=4"><img src="4.jpeg" alt="Flower 4"></a></div>
-    <div class="flower-item"><a href="cart.html?flower=5"><img src="5.jpeg" alt="Flower 5"></a></div>
+    <div class="flower-item">
+        <a href="cart.html?flower=1">
+            <img src="1.jpeg" alt="Flower 1">
+            <div class="flower-price">FROM <strong>$10</strong></div> <!-- Price tag -->
+        </a>
+    </div>
+    <!-- Repeat for other flower items -->
+    <div class="flower-item">
+        <a href="cart.html?flower=2">
+            <img src="2.jpeg" alt="Flower 2">
+            <div class="flower-price"> FROM <strong>$55</strong></div> <!-- Price tag -->
+        </a>
+    </div>
+    <div class="flower-item">
+        <a href="cart.html?flower=3">
+            <img src="3.jpeg" alt="Flower 1">
+            <div class="flower-price"> FROM <strong>$99</strong></div> <!-- Price tag -->
+        </a>
+    </div>
+    <div class="flower-item">
+        <a href="cart.html?flower=4">
+            <img src="4.jpeg" alt="Flower 4">
+            <div class="flower-price"> FROM <strong>$78</strong></div> <!-- Price tag -->
+        </a>
+    </div>
+    <div class="flower-item">
+        <a href="cart.html?flower=5">
+            <img src="5.jpeg" alt="Flower 5">
+            <div class="flower-price"> FROM<strong>$98</strong></div> <!-- Price tag -->
+        </a>
+    </div>
+
+
+  
 </div>
 
 </body>
