@@ -1,2 +1,4 @@
 # Flowers-Frontend
-C322-Spring2024 Final Project Frontend 
+
+Frontend Repository for Flower Shop Project Utilising HTML, CSS, Javascript, and Github Pages.
+
